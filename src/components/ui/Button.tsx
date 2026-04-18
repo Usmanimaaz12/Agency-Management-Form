@@ -2,7 +2,7 @@ import React from 'react'
 import { cn } from '../../libs/utils/common'
 
 type ButtonProps = {
-    variant?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark",
+    variant?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light",
     size?: "small" | "medium" | "large",
     className?: string,
     children: React.ReactNode,
@@ -10,14 +10,13 @@ type ButtonProps = {
 
 const Button = ({variant = "primary", size = "medium", className, children, ...props}: ButtonProps) => {
     const variants = {
-        primary: "bg-blue-500 text-white hover:bg-blue-600",
-        secondary: "bg-gray-500 text-white hover:bg-gray-600",
+        primary: "bg-gray-800 text-white hover:bg-gray-900 rounded-sm",
+        secondary: "bg-gray-200 text-gray-800 hover:bg-gray-600 rounded-sm",
         success: "bg-green-500 text-white hover:bg-green-600",
         danger: "bg-red-500 text-white hover:bg-red-600",
         warning: "bg-yellow-500 text-white hover:bg-yellow-600",
         info: "bg-cyan-500 text-white hover:bg-cyan-600",
         light: "bg-gray-200 text-gray-800 hover:bg-gray-300",
-        dark: "bg-gray-800 text-white hover:bg-gray-900",
     }
     const sizes = {
         small: "px-2 py-1 text-sm",
