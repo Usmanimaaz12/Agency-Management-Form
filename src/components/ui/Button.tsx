@@ -1,7 +1,6 @@
 import React from 'react'
 import { cn } from '../../libs/utils/common'
 
-// button prop type
 type ButtonProps = {
     variant?: "primary" | "secondary" | "success" | "danger" | "warning" | "info" | "light" | "dark",
     size?: "small" | "medium" | "large",
