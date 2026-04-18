@@ -30,7 +30,7 @@ const AgencyTabs = ({
                   e.stopPropagation();
                   OnRemove(index);
                 }}
-                className="ml-2 cursor-pointer items-center"
+                className="ml-2 cursor-pointer items-center hover:text-red-500"
               >
                 X
               </span>

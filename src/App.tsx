@@ -168,11 +168,26 @@ function App() {
     return errors;
   };
 
-  if (isOpen) {
+  if (!isOpen) {
     return (
-      <div>
-        <h2>Click to Open Modal</h2>
-        <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
+      <div className="p-4">
+        <h1 className="text-3xl font-bold mb-4 text-center"> All Agencies</h1>
+        <div className="flex flex-col gap-4">
+          {agencies.map((agency, index) => (
+            <div
+              key={agency.id}
+              className="bg-gray-700 text-white p-4 rounded-lg cursor-pointer"
+              onClick={() => {
+                setActiveAgencyIndex(index);
+                setIsOpen(true);
+              }}
+            >
+              <h2 className="text-xl font-semibold">{agency.agencyName}</h2>
+              <p>Type: {agency.agencyType}</p>
+              <p>Completion Date: {agency.completionDate}</p>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -180,7 +195,13 @@ function App() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-h-[90vh] overflow-y-scroll bg-black text-gray-200 flex items-start flex-col gap-6 p-4 max-w-2xl border-0 rounded-lg">
-        <h2 className="text-2xl font-bold mb-4">Agency Details</h2>
+        <div className="flex justify-between w-full pb-4">
+          <p></p>
+          <h2 className="text-2xl font-bold mb-4 text-center">
+            Agency Details
+          </h2>
+          <Button onClick={() => setIsOpen(false)}>X</Button>
+        </div>
 
         <div
           className={`${isError ? "border-2 border-red-500 rounded-sm" : ""} w-max-content `}
@@ -262,12 +283,21 @@ function App() {
           )}
         </div>
 
-        <div>
-          <button onClick={() => setIsPOCExpanded(!isPOCExpanded)}>
-            {/* need to show arrows */}
-            {isPOCExpanded ? "Hide POCs" : "Show POCs"}
-          </button>
-        </div>
+        <button
+          onClick={() => setIsPOCExpanded(!isPOCExpanded)}
+          className="flex justify-between items-center cursor-pointer"
+        >
+          <p>Agency POC Details</p>
+
+          {/* need to show arrows */}
+          {
+            isPOCExpanded ? (
+              <span className="ml-2">&#9650;</span> // Up arrow
+            ) : (
+              <span className="ml-2">&#9660;</span>
+            ) // Down arrow
+          }
+        </button>
         {isPOCExpanded && (
           <>
             <div

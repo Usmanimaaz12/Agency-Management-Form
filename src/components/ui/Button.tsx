@@ -38,7 +38,12 @@ const Button = ({
   };
   return (
     <button
-      className={cn(variants[variant], sizes[size], className)}
+      className={cn(
+        variants[variant],
+        sizes[size],
+        className,
+        "cursor-pointer",
+      )}
       {...props}
     >
       {children}
