@@ -18,7 +18,7 @@ const Tabs = ({
 }: TabsProps
 ) => {
   return (
-    <div className='flex items-center gap-2 text-white'>
+    <div className='flex items-center gap-2 text-white flex-wrap'>
           {
               pocs.map((poc: IPOC, index: number) => (
                   <Button key={poc.id} variant={activeIndex === index ? "secondary" : "primary"} onClick={() => onSelect(index)}>
