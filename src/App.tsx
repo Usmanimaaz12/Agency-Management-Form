@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <h1>Agency Management</h1>
+      <h1 className="w-full bg-black text-white">Agency Management</h1>
     </>
   );
 }
