@@ -11,8 +11,8 @@ type ButtonProps = {
 const Button = ({variant = "primary", size = "medium", className, children, ...props}: ButtonProps) => {
     const variants = {
         primary: "bg-gray-800 text-white hover:bg-gray-900 rounded-sm",
-        secondary: "bg-gray-200 text-gray-800 hover:bg-gray-600 rounded-sm",
-        success: "bg-green-500 text-white hover:bg-green-600",
+        secondary: "bg-gray-200 text-gray-800 hover:bg-gray-100 rounded-sm",
+        success: "bg-blue-500 text-white hover:bg-green-600 rounded-sm",
         danger: "bg-red-500 text-white hover:bg-red-600",
         warning: "bg-yellow-500 text-white hover:bg-yellow-600",
         info: "bg-cyan-500 text-white hover:bg-cyan-600",

@@ -15,14 +15,18 @@ const AgencyTabs = ({
     OnAdd,
     OnRemove
 }: AgencyTabsProps) => {
+    console.log("🚀 ~ AgencyTabs ~ agencies:", agencies)
   return (
       <div className='flex items-center gap-2 text-white'>
           {agencies.map((agency : IAgency, index:number) => (
               <div key={agency.id} >
-                  <Button variant={activeIndex === index ? "primary" : "secondary"} onClick={() => OnSelect(index)}>
+                  <Button variant={activeIndex === index ? "secondary" : "primary"} onClick={() => OnSelect(index)}>
                       AGENCY {index + 1}
                       {agencies.length > 1 && (
-                          <span onClick={() => OnRemove(index)} className='ml-2 text-red-500 cursor-pointer'>X</span>
+                          <span onClick={(e) => {
+                                e.stopPropagation();
+                              OnRemove(index)
+                          }} className='ml-2 text-red-500 cursor-pointer'>X</span>
                       )}
                   </Button>
                   

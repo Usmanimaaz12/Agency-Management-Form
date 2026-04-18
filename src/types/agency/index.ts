@@ -3,7 +3,7 @@ export type AgencyTypes = "AOR" | "PERFORMANCE MARKETING" | "SOCIAL MEDIA MARKET
 
 export interface IPOC{
     id: number;
-    gender: string;
+    namePrefix: "Mr." | "Ms.";
     name: string;
     email?: string;
     countryCode?: string;
